@@ -59,6 +59,7 @@ img {
 
 .header-web-studio {
     border-bottom: 1px solid var(--CORNFLOWER, #E7E9FC);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header-div-web-studio {
@@ -98,19 +99,6 @@ img {
     gap: 40px;
 }
 
-.menu-li-link::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 4px;
-    border-radius: 2px;
-    background: transparent;
-}
-
-.menu-li-link.current::after {
-    background: var(--OCEAN, #404BBF);
-}
-
 .menu-li-link {
     color: var(--NAVY-BLUE, #2E2F42);
     /* Menu Text */
@@ -123,11 +111,28 @@ img {
     padding-top: 24px;
     padding-bottom: 24px;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
 .menu-li-link:hover, 
 .menu-li-link:focus {
     color: var(--OCEAN, #404BBF);;
+}
+
+.menu-li-link::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: transparent;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+
+.menu-li-link.current::after {
+    background: var(--OCEAN, #404BBF);
 }
 
 /* address */
@@ -160,12 +165,15 @@ img {
 
 .section-solutions {
     background-color: var(--NAVY-BLUE);
-    background-image: url(../images/people-office\ 1.jpg);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url(../images/people-office\ 1.jpg);
+    background-image: url(../images/img-name.jpeg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/img-name.jpeg);
     max-height: 600px;
+    max-width: 1440px;
     padding-top: 188px;
     padding-bottom: 188px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
 
 /* h1 */
@@ -254,6 +262,7 @@ img {
     background: var(--CLOUD, #F4F4FD);
     align-items: center;
     justify-content: center;
+    margin-bottom: 8px;
 }
 
 .our-advantages-list-li-h {
@@ -362,8 +371,6 @@ img {
 .our-team-icons-li {
     width: 40px;
     height: 40px;
-    background-color: var(--IRIS, #4D5AE5);
-    border-radius: 50%;
 }
 
 .icon_social {
@@ -373,6 +380,17 @@ img {
     align-items: center;
     display: flex;
     justify-content: center;
+    border-radius: 50%;
+    background-color: var(--IRIS, #4D5AE5);
+}
+
+.icon_social:hover,
+.icon_social:focus {
+    background-color: var(--OCEAN);
+}
+
+.social-icons {
+    fill: var(--CLOUD);
 }
 
 
@@ -483,8 +501,8 @@ img {
 }
 
 .footer-div-web-studio {
-    margin-left: 156px;
     margin-right: 120px;
+    margin-left: 156px;
 }
 
 .footer-logo-iris {
@@ -532,7 +550,7 @@ img {
     height: 40px;
 }
 
-.icon_social {
+.footer-icons {
     width: 100%;
     height: 100%;
     align-items: center;
@@ -543,7 +561,7 @@ img {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.icon_social:focus,
-.icon_social:hover {
+.footer-icons:focus,
+.footer-icons:hover {
     background-color: var(--GREEN, #31D0AA);
 }
